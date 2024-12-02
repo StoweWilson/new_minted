@@ -1,0 +1,110 @@
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack header and content vertically */
+    
+    position: relative;
+}
+
+.header-logo{
+    width: 100%;
+    padding: 20px; /* Adjust padding to your preference */
+    background-color: white; /* Background color for the header */
+    position: sticky; /* Makes it sticky to the top */
+    top: 0; /* Always stays at the top */
+    z-index: 10; /* Ensures it's above the video and other content */
+    text-align: center; /* Centers the logo in the header */
+}
+.background-video{
+    position: absolute;
+    top: 90px; /* Margin from the top */
+    left: 30px; /* Margin from the left */
+    right: 30px; /* Margin from the right */
+    bottom: 30px; /* Margin from the bottom */
+    width: calc(100% - 60px); /* Full width minus left and right margins */
+    height: calc(100vh - 120px); /* Full height minus top and bottom margins */
+    border-radius: 15px; /* Rounded corners */
+    object-fit: cover; /* Ensures proper scaling while filling the space */
+    z-index: -1; /* Keeps the video behind other content */
+}
+.center-container{
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers content horizontally */
+    gap: 20px;
+    margin-top: 525px;
+    z-index: 2;
+}
+
+.center-container img{
+    width: 15vw;
+    height: auto;
+    object-fit: contain;
+}
+
+.center-container .divider{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+.down-arrow {
+    position: absolute;
+    bottom: 50px; /* Distance from the bottom of the screen */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    border-left: 10px solid white; /* Arrow color */
+    border-top: 10px solid white; /* Arrow color */
+    border-radius: 10px;
+    transform: rotate(45deg); /* Rotate to make it a down arrow */
+    animation: bounce 1s infinite; /* Add bounce animation */
+}
+.second-container{
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center; /* Ensures the content inside is centered */
+    gap: 20px; /* Adds space between the images */
+    align-items: center;
+    height: 35vh;
+    width: calc(100% - 60px);
+    margin: 0 auto;
+    margin-top: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+.second-container img {
+    width: 30vw; /* Adjust the width as per your design */
+    height: auto;
+    object-fit: contain;
+}
+/* Resize Arrow Responsively */
+@media (max-width: 768px) {
+    .down-arrow {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Animation for Bouncing */
+@keyframes bounce {
+    0% {
+        transform: translateX(-50%) translateY(0) rotate(45deg);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px) rotate(45deg);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0) rotate(45deg);
+    }
+}
