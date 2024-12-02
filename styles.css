@@ -8,6 +8,7 @@ body{
 }
 
 
+
 .header-logo{
     width: 100%;
     padding: 20px; /* Adjust padding to your preference */
@@ -35,13 +36,13 @@ body{
     justify-content: center; /* Centers horizontally */
     align-items: center; /* Centers vertically */
     position: absolute; /* Positions the container absolutely within the video */
-    bottom: 30%; /* Centers the container vertically in the video */
+    bottom: 35%; /* Centers the container vertically in the video */
     left: 50%; /* Centers the container horizontally in the video */
     transform: translate(-50%, -50%);
 }
 
 .center-container img{
-    width: 15vw;
+    width: 20vw;
     height: auto;
     object-fit: contain;
 }
@@ -77,22 +78,27 @@ body{
     width: calc(100% - 60px);
     top: 90%;
     border-radius: 10px;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
+
+.second-container::-webkit-scrollbar {
+    height: 8px; /* Height of the horizontal scrollbar */
+}
+
+.second-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.4); /* Scrollbar color */
+    border-radius: 5px; /* Rounded corners for scrollbar */
+}
+
 .second-container img {
     width: 30vw; /* Adjust the width as per your design */
     height: auto;
     object-fit: contain;
 }
 
-body{
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column; /* Stack header and content vertically */
-    position: relative;
-}
 
 .header-logo{
     width: 100%;
@@ -315,6 +321,45 @@ body{
 .jewlery-back:hover img {
     opacity: 0.5; /* Fade image to make video more visible */
 }
+
+.tanks-back{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Optional: for a subtle shadow effect */
+    
+}
+.tanks-back img{
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+.tanks-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover; /* Ensure video fills the box */
+    opacity: 0; /* Hide video initially */
+    z-index: 1; /* Place video behind the image initially */
+    transition: opacity 0.3s ease; /* Smooth fade-in for video */
+}
+.tanks-back:hover .tanks-video {
+    opacity: 1; /* Show video on hover */
+}
+.tanks-back:hover img {
+    opacity: 0.5; /* Fade image to make video more visible */
+}
+
+
 /* Resize Arrow Responsively */
 @media (max-width: 768px) {
     .down-arrow {
@@ -327,13 +372,28 @@ body{
     }
 
     .second-container {
-        flex-direction: column;
-        align-items: center;
-        height: 60vh; /* Adjust height for smaller screens */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; 
+        gap: 20px; /* Space between items */
+        height: 75vh; /* Limit the height */
+        overflow-y: auto; /* Enable vertical scrolling */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        padding: 10px; /* Add padding for better touch interaction */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
 
     .second-container img {
-        width: 45vw; /* Adjust image size on mobile */
+        width: 80%; /* Adjust width for smaller screens */
+        height: auto;
+        object-fit: contain;
+    }
+    .jewelry-back, .tank-back {
+        /* Apply scrollable styling to these specific sections */
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-height: 60vh; /* Set max height for vertical scrolling */
+        overflow-y: auto;
     }
 }
 
@@ -358,6 +418,9 @@ body{
 
 .jewlery-back {
     display: none; /* Default: hidden on all screens */
+}
+.tanks-back{
+    display: none;
 }
 
 @media (min-width: 1440px) {
@@ -397,8 +460,44 @@ body{
     .jewlery-back:hover img {
         opacity: 0.5; /* Fade image to make video more visible */
     }
-}
 
+
+.tanks-back {
+    display: flex;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Optional: subtle shadow effect */
+}
+.tanks-back img {
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+.tanks-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover; /* Ensure video fills the box */
+    opacity: 0; /* Hide video initially */
+    z-index: 1; /* Place video behind the image initially */
+    transition: opacity 0.3s ease; /* Smooth fade-in for video */
+}
+.tanks-back:hover .tanks-video {
+    opacity: 1; /* Show video on hover */
+}
+.tanks-back:hover img {
+    opacity: 0.5; /* Fade image to make video more visible */
+}
+}
 
 
 /* Animation for Bouncing */
