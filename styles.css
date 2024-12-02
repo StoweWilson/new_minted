@@ -3,7 +3,6 @@ body{
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column; /* Stack header and content vertically */
-    
     position: relative;
 }
 
@@ -46,20 +45,21 @@ body{
 .center-container .divider{
     font-size: 20px;
     font-weight: bold;
-    color: black;
+    color: white;
 }
 .down-arrow {
     position: absolute;
-    bottom: 50px; /* Distance from the bottom of the screen */
+    bottom: 30%; /* Distance from the bottom of the screen */
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 60px;
-    border-left: 10px solid white; /* Arrow color */
-    border-top: 10px solid white; /* Arrow color */
+    width: 75px;
+    height: 75px;
+    border-left: 10px solid rgb(255, 255, 255); /* Arrow color */
+    border-top: 10px solid rgb(255, 255, 255); /* Arrow color */
     border-radius: 10px;
     transform: rotate(45deg); /* Rotate to make it a down arrow */
     animation: bounce 1s infinite; /* Add bounce animation */
+    z-index: 5;
 }
 .second-container{
     position: relative;
@@ -81,6 +81,120 @@ body{
     height: auto;
     object-fit: contain;
 }
+.hoodie-back{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Optional: for a subtle shadow effect */
+    
+}
+.hoodie-back img{
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+.hoodie-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover; /* Ensure video fills the box */
+    opacity: 0; /* Hide video initially */
+    z-index: 1; /* Place video behind the image initially */
+    transition: opacity 0.3s ease; /* Smooth fade-in for video */
+}
+.hoodie-back:hover .hoodie-video {
+    opacity: 1; /* Show video on hover */
+}
+.hoodie-back:hover img {
+    opacity: 0.5; /* Fade image to make video more visible */
+}
+.heavy-back{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Optional: for a subtle shadow effect */
+    
+}
+.heavy-back img{
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+.mens-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover; /* Ensure video fills the box */
+    opacity: 0; /* Hide video initially */
+    z-index: 1; /* Place video behind the image initially */
+    transition: opacity 0.3s ease; /* Smooth fade-in for video */
+}
+.heavy-back:hover .mens-video {
+    opacity: 1; /* Show video on hover */
+}
+.heavy-back:hover img {
+    opacity: 0.5; /* Fade image to make video more visible */
+}
+
+.tees-back{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Optional: for a subtle shadow effect */
+    
+}
+.tees-back img{
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+.tees-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover; /* Ensure video fills the box */
+    opacity: 0; /* Hide video initially */
+    z-index: 1; /* Place video behind the image initially */
+    transition: opacity 0.3s ease; /* Smooth fade-in for video */
+}
+.tees-back:hover .tees-video {
+    opacity: 1; /* Show video on hover */
+}
+.tees-back:hover img {
+    opacity: 0.5; /* Fade image to make video more visible */
+}
+
+
+
+
+
 /* Resize Arrow Responsively */
 @media (max-width: 768px) {
     .down-arrow {
