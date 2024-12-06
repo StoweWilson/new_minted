@@ -1,0 +1,168 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack header and content vertically */
+    overflow-x: hidden;
+    width: 100vw;
+    position: relative;
+    background-color: #f9f9f9;
+}
+
+
+
+.header-logo{
+    width: 100%;
+    padding: 20px; /* Adjust padding to your preference */
+    background-color: white; /* Background color for the header */
+    position: sticky; /* Makes it sticky to the top */
+    top: 0; /* Always stays at the top */
+    z-index: 10; /* Ensures it's above the video and other content */
+    text-align: center; /* Centers the logo in the header */
+}
+
+/* Carousel Container */
+.carousel-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: white;
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 70px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    gap: 20px;
+}
+
+/* Arrows */
+.arrow {
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #203354;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.arrow:hover {
+    color: #0056b3;
+    transform: translateY(-50%) scale(1.1);
+}
+
+#prev {
+    left: -40px;
+}
+
+#next {
+    right: -40px;
+}
+
+/* Main Display */
+.main-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+   
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+
+/* Main Image */
+#main-image {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Details Section */
+.details {
+    text-align: left;
+    width: 100%;
+}
+
+.details h2 {
+    font-size: 2rem;
+    color: #203354;
+    margin-bottom: 10px;
+}
+
+.details p {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Size Options */
+.size-options {
+    margin-bottom: 20px;
+}
+
+.size-options label {
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+#size-select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Add to Cart Button */
+#add-to-cart {
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #203354;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#add-to-cart:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
